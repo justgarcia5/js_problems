@@ -207,14 +207,34 @@ let q = new Circle(4.44);
 
 
 
-let str = "Helo"
+let str = "abcdefghijklmnopqrstuvwxyzAAbbbbb"
 
 function doubleLetters(word) {
   let newWord = word.toLowerCase().split('')
-  console.log(newWord)
-  for (let i = 0; i < newWord.length; i++) {
-    console.log(newWord[i])
+  let dupe = newWord.filter((item, index) => newWord.indexOf(item) !== index);
+  console.log(dupe.join(" "))
+  if (dupe.length > 0) {
+    return true;
+  } else {
+    return false;
   }
 }
 
-console.log(doubleLetters(str))
+// console.log(doubleLetters(str))
+
+
+// Given a string of letters in the English alphabet, return the letter that's missing from the string. The missing letter will make the string be in alphabetical order (from A to Z).
+
+// If there are no missing letters in the string, return "No Missing Letter".
+
+let string = "abcdefghijklmnopqrstuvwxyz"
+
+function missingLetter(str) {
+  let alph = "abcdefghijklmnopqrstuvwxyz"
+  let x;
+  for (x of str) {
+    console.log(x);
+  }
+}
+
+console.log(missingLetter(string))
